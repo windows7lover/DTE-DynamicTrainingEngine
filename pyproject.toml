@@ -1,12 +1,15 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "dte"
 version = "0.1.0"
+description = "Dynamic Training Engine"
+readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+  "torch",
   "hydra-core>=1.3",
   "tqdm",
   "wandb",
@@ -14,3 +17,8 @@ dependencies = [
   "einops",
   "adam-atan2-pytorch",
 ]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dte*"]
+exclude = ["user_module*"]
