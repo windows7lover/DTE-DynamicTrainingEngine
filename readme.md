@@ -1,9 +1,16 @@
-# Dynamic Training Engine (DTE)
+# Dynamic Training Engine (DTE) - v0.1 (beta)
 
 This repository provides a **generic, block-based engine for training neural networks with adaptive and recursive execution**. 
 It is designed as a reusable control layer for iteration, stopping, and unrolling during training, without hard-coding a specific algorithm.
 
 The engine includes a **Tiny Recursive Model (TRM)** implementation as a **baseline reference**.
+
+## Project status
+
+**v0.1 (beta)**
+
+This release provides a stable core training engine and a reference TRM baseline.
+The API and configuration structure may still evolve.
 
 ---
 
@@ -19,7 +26,7 @@ The engine includes a **Tiny Recursive Model (TRM)** implementation as a **basel
 ## Quick Installation
 
 ```bash
-# (Optional) load CUDA
+# Load CUDA
 module load cuda/12.6.0
 
 # IMPORTANT:
@@ -37,7 +44,7 @@ conda activate dte-env
 # Upgrade tooling inside the conda env
 python -m pip install -U pip setuptools wheel
 
-# Install PyTorch (CPU or CUDA build as appropriate)
+# Install PyTorch
 pip install torch
 
 # Clone and install the package
@@ -83,8 +90,6 @@ torch_compile.enabled=true
 
 Enabling compilation typically yields a **~2.5× speedup**, depending on hardware.
 
----
-
 ### Optimized multi-GPU training
 
 The DTE package and the provided `pretrain.py` script are compatible with
@@ -98,6 +103,8 @@ compilation enabled and Weights & Biases logging active:
 torchrun --nproc-per-node=4 pretrain.py --config-name=config
 ```
 
+---
+
 ## Reference implementation
 
 The TRM baseline follows the original implementation and design described in:
@@ -107,8 +114,20 @@ https://github.com/SamsungSAILMontreal/TinyRecursiveModels
 The provided TRM baseline reproduces the reported performance on Sudoku (~4h00 on a 
 single A100, using compilation)
 
+If you use the **TRM baseline** provided in this repository, please consider citing:
+
+```bibtex
+@article{jolicoeur2025less,
+  title   = {Less is More: Recursive Reasoning with Tiny Networks},
+  author  = {Jolicoeur-Martineau, Alexia},
+  journal = {arXiv preprint arXiv:2510.04871},
+  year    = {2025}
+}
+```
+
 ## Acknowledgements
 
 Special thanks to **Alexia Jolicoeur-Martineau** for her help and guidance in
 implementing this system properly and ensuring reproducibility of the original TRM
 performance.
+
