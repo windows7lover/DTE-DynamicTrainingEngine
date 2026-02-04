@@ -12,8 +12,8 @@ import torch
 from torch import nn
 from pydantic import BaseModel
 
-from user_module.models.utils.common import trunc_normal_init_
-from user_module.models.utils.layers import (
+from models.utils.common import trunc_normal_init_
+from models.utils.layers import (
     rms_norm,
     SwiGLU,
     Attention,

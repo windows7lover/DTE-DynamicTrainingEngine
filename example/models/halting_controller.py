@@ -1,7 +1,7 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from typing import Optional
-from user_module.models.trm import TRMMemory
+from models.trm import TRMMemory
 import torch
 
 @dataclass
