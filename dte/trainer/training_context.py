@@ -2,13 +2,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Optional
 
-from core.trainer.train_state import TrainingState
-from core.utils.distributed import DistContext
-from core.trainer.optimization_helper import OptimizationHelper
-from core.trainer.metric_helper import MetricHelper
-from core.trainer.ema import EMAHelper
-from core.act.act_container import ACTContainerManager
-from core.interfaces import LossProtocol, HaltingController
+from dte.trainer.train_state import TrainingState
+from dte.utils.distributed import DistContext
+from dte.trainer.optimization_helper import OptimizationHelper
+from dte.trainer.metric_helper import MetricHelper
+from dte.trainer.ema import EMAHelper
+from dte.act.act_container import ACTContainerManager
+from dte.interfaces import LossProtocol, HaltingController
 
 
 @dataclass

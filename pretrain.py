@@ -8,10 +8,10 @@ import torch.distributed as dist
 import tqdm
 import wandb
 
-from core.trainer.api import compute_loss, compute_metrics, update_halting
-from core.trainer.trainer_builder import TrainerBuilder
-from core.utils.distributed import master_print, teardown_distributed, ddp_check_grad_synced
-from core.utils.model_summary import print_param_table
+from dte.trainer.api import compute_loss, compute_metrics, update_halting
+from dte.trainer.trainer_builder import TrainerBuilder
+from dte.utils.distributed import master_print, teardown_distributed, ddp_check_grad_synced
+from dte.utils.model_summary import print_param_table
 
 # =============================================================================
 # HELPERS

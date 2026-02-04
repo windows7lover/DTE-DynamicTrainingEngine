@@ -2,7 +2,7 @@ import numpy as np
 from torch.utils.data import Dataset
 import torch
 
-from core.data.batch import Batch
+from dte.data.batch import Batch
 
 
 class FixedNumpyDataset(Dataset):

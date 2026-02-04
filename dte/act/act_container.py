@@ -6,8 +6,8 @@ from typing import Protocol
 
 import torch
 
-from core.data.batch import Batch
-from core.interfaces import MemoryProtocol, OutputProtocol, HaltingStateProtocol
+from dte.data.batch import Batch
+from dte.interfaces import MemoryProtocol, OutputProtocol, HaltingStateProtocol
 
 
 class DataStreamProtocol(Protocol):

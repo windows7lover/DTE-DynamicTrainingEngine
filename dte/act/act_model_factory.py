@@ -8,7 +8,7 @@ import torch
 from torch import nn
 from torch.nn.parallel import DistributedDataParallel as DDP
 
-from core.act.act_model_wrapper import ACTModelWrapper
+from dte.act.act_model_wrapper import ACTModelWrapper
 
 
 @dataclass(frozen=True)

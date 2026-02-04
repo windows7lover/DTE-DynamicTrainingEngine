@@ -4,9 +4,9 @@ import torch
 import torch.distributed as dist
 from torch.nn.parallel import DistributedDataParallel as DDP
 
-from core.utils.distributed import DistContext
-from core.utils.optimizers_utils import compute_lr
-from core.trainer.train_state import TrainingState
+from dte.utils.distributed import DistContext
+from dte.utils.optimizers_utils import compute_lr
+from dte.trainer.train_state import TrainingState
 
 
 class OptimizationHelper:

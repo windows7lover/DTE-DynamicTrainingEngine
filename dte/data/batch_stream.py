@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import torch
-from core.data.batch import Batch
+from dte.data.batch import Batch
 
 
 class BatchStream:

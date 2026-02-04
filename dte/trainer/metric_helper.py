@@ -6,7 +6,7 @@ from typing import Dict, Optional, Tuple, Any
 
 import torch
 import torch.distributed as dist
-from core.utils.distributed import DistContext
+from dte.utils.distributed import DistContext
 
 
 class MetricHelper:

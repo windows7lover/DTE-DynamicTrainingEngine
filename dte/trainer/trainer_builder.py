@@ -3,17 +3,17 @@ from __future__ import annotations
 import os
 import torch
 
-from core.utils.distributed import setup_distributed, DistContext, master_print
-from core.utils.wandb_utils import init_wandb
-from core.trainer.train_state import TrainingState
-from core.trainer.optimization_helper import OptimizationHelper
-from core.trainer.metric_helper import MetricHelper
-from core.trainer.training_context import TrainingContext
-from core.trainer.checkpoint import CheckpointManager
-from core.trainer.ema import EMAHelper
-from core.act.act_model_factory import ACTModelFactory, ACTModelCompiler
-from core.act.act_container import ACTContainerManager
-from core.data.data_module import DataModule
+from dte.utils.distributed import setup_distributed, DistContext, master_print
+from dte.utils.wandb_utils import init_wandb
+from dte.trainer.train_state import TrainingState
+from dte.trainer.optimization_helper import OptimizationHelper
+from dte.trainer.metric_helper import MetricHelper
+from dte.trainer.training_context import TrainingContext
+from dte.trainer.checkpoint import CheckpointManager
+from dte.trainer.ema import EMAHelper
+from dte.act.act_model_factory import ACTModelFactory, ACTModelCompiler
+from dte.act.act_container import ACTContainerManager
+from dte.data.data_module import DataModule
 from config.config_loader import PretrainConfig
 
 

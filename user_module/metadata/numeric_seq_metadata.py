@@ -2,7 +2,7 @@
 from __future__ import annotations
 from dataclasses import dataclass, field
 
-from core.data.base_dataset_metadata import BaseDatasetMetadata
+from dte.data.base_dataset_metadata import BaseDatasetMetadata
 
 
 @dataclass

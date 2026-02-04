@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from core.act.act_container import ACTContainer
-from core.interfaces import HaltingController
-from core.trainer.training_context import TrainingContext
+from dte.act.act_container import ACTContainer
+from dte.interfaces import HaltingController
+from dte.trainer.training_context import TrainingContext
 
 def compute_loss(training_ctx: TrainingContext, container: ACTContainer):
     """

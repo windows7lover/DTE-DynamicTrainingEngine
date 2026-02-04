@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Dict, Tuple, Any
 
 import torch
-from core.trainer.metric_helper import MetricRecord
+from dte.trainer.metric_helper import MetricRecord
 
 def compute_trm_metrics(
     model_memory: Any,                    # Model internal model_memory

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import numpy as np
-from core.interfaces import GeneratorProtocol
+from dte.interfaces import GeneratorProtocol
 
 
 class SortGenerator(GeneratorProtocol):

@@ -7,11 +7,11 @@ from torch.utils.data import DataLoader
 from torch.utils.data.distributed import DistributedSampler
 
 from config.config_loader import import_from_path
-from core.data.batch import Batch
-from core.data.batch_stream import BatchStream
-from core.data.fixed_numpy_dataset import FixedNumpyDataset
-from core.data.online_dataset import OnlineDataset
-from core.data.base_dataset_metadata import BaseDatasetMetadata
+from dte.data.batch import Batch
+from dte.data.batch_stream import BatchStream
+from dte.data.fixed_numpy_dataset import FixedNumpyDataset
+from dte.data.online_dataset import OnlineDataset
+from dte.data.base_dataset_metadata import BaseDatasetMetadata
 
 
 class DataModule:

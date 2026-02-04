@@ -8,8 +8,8 @@ import torch
 from torch.utils.data import IterableDataset, get_worker_info
 from torch import from_numpy
 
-from core.data.batch import Batch
-from core.interfaces import GeneratorProtocol
+from dte.data.batch import Batch
+from dte.interfaces import GeneratorProtocol
 
 
 class OnlineDataset(IterableDataset):

@@ -9,8 +9,8 @@ import numpy as np
 import torch
 import torch.distributed as dist
 
-from core.trainer.training_context import TrainingContext
-from core.utils.distributed import DistContext, unwrap
+from dte.trainer.training_context import TrainingContext
+from dte.utils.distributed import DistContext, unwrap
 
 
 def _atomic_save(obj, path: str) -> None:

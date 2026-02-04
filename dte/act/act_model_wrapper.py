@@ -6,7 +6,7 @@ from typing import Dict, Tuple
 import torch
 from torch import nn
 
-from core.interfaces import (
+from dte.interfaces import (
     ACTModelProtocol,
     CoreProtocol,
     EncoderProtocol,
@@ -14,7 +14,7 @@ from core.interfaces import (
     MemoryProtocol,
     OutputProtocol,
 )
-from core.utils.distributed import DistContext
+from dte.utils.distributed import DistContext
 
 
 class ACTModelWrapper(nn.Module):

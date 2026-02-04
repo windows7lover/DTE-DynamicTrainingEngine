@@ -8,7 +8,7 @@ import torch
 from torch import nn
 
 from config.config_loader import PretrainConfig
-from core.interfaces import MetricsFn
+from dte.interfaces import MetricsFn
 
 
 @dataclass
