@@ -5,7 +5,7 @@ from torch import nn
 import torch.nn.functional as F
 from torch.nn.functional import scaled_dot_product_attention
 
-from user_module.models.utils.common import trunc_normal_init_
+from models.utils.common import trunc_normal_init_
 
 
 CosSin = Tuple[torch.Tensor, torch.Tensor]
