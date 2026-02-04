@@ -7,7 +7,7 @@ from typing import Any
 import torch
 from torch import nn
 
-from config.config_loader import PretrainConfig
+from dte.utils.config_loader import PretrainConfig
 from dte.interfaces import MetricsFn
 
 
