@@ -9,5 +9,5 @@ dataset_metadata:
   min_len_seq: 2 
 
 online:
-  generator_cls_path: user_module.datasets.sort_generator.SortGenerator
+  generator_cls_path: datasets.sort_generator.SortGenerator
   generator: {}
