@@ -47,23 +47,50 @@ Check the installation by writing in your console
 python -c "import dte; print('DTE installed')"
 ```
 
-## Quick launch
+### Simple pretraining of TRM on a sorting task
 
-### Pretrain TRM on sorting problem
+The following command launches pretraining of the TRM model on a simple
+vector sorting task.
 
-Write this line to launch the pretrain of the TRM model on a simple sorting problem.
-This is with the simplest setting: no multi gpu, no co,pilation, no wandb, no resume
+This run uses the **simplest configuration**:
+- single GPU or CPU
+- no compilation
+- no Weights & Biases logging
+
+The task consists of sorting input vectors of length 2–100, with integer values
+in the range [1, 64].
 
 ```bash
-# Once in the folder DTE-DynamicTrainingEngine
+# From the DTE-DynamicTrainingEngine repository
 cd example
 python pretrain.py \
-torch_compile.enabled=false \
-checkpoint.auto_resume=false \
-checkpoint.save.train=false \
-checkpoint.save.model=false \
-checkpoint.save.ema=false \
-wandb_config.enabled=false \
+  --config-name=config \
+  torch_compile.enabled=false \
+  wandb_config.enabled=false
+```
+
+By default, the pretraining script loads `config/config.yaml`.
+
+To enable compilation, either remove the override or explicitly set:
+```bash
+torch_compile.enabled=true
+```
+
+Enabling compilation typically yields a **~2.5× speedup**, depending on hardware.
+
+---
+
+### Optimized multi-GPU training
+
+The DTE package and the provided `pretrain.py` script are compatible with
+**Distributed Data Parallel (DDP)**.
+
+The following command launches pretraining on 4 GPUs, with
+compilation enabled and Weights & Biases logging active:
+
+```bash
+# From the DTE-DynamicTrainingEngine/example folder
+torchrun --nproc-per-node=4 pretrain.py --config-name=config
 ```
 
 ## Reference implementation
@@ -73,7 +100,7 @@ The TRM baseline follows the original implementation and design described in:
 https://github.com/SamsungSAILMontreal/TinyRecursiveModels
 
 The provided TRM baseline reproduces the reported performance on Sudoku (~4h00 on a 
-single A100)
+single A100, using compilation)
 
 ## Acknowledgements
 
