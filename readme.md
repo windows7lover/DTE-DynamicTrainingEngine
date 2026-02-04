@@ -19,17 +19,22 @@ The engine includes a **Tiny Recursive Model (TRM)** implementation as a **basel
 ## Quick Installation
 
 ```bash
-# (Optional) load CUDA if you use GPUs
+# (Optional) load CUDA
 module load cuda/12.6.0
+
+# IMPORTANT:
+# Do NOT load a system Python module when using conda.
+# (e.g. do not write module load python/3.10)
+# Conda must own the Python interpreter.
 
 # Initialize conda
 source ~/miniconda3/etc/profile.d/conda.sh
 
 # Create and activate environment
-conda create -n dte python=3.10 -y
-conda activate dte
+conda create -n dte-env python=3.10 -y
+conda activate dte-env
 
-# Upgrade tooling inside the env
+# Upgrade tooling inside the conda env
 python -m pip install -U pip setuptools wheel
 
 # Install PyTorch (CPU or CUDA build as appropriate)
