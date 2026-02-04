@@ -88,6 +88,7 @@ def train_epoch(training_ctx, epoch: int):
     train_state = training_ctx.train_state
     dist_ctx = training_ctx.dist
     data_module = train_state.data_module
+    cfg = train_state.config
 
     train_state.epoch = epoch
     train_state.model.train()
@@ -107,7 +108,8 @@ def train_epoch(training_ctx, epoch: int):
         train_state.step += num_act_steps
 
         if dist_ctx.is_master and metrics:
-            wandb.log(metrics, step=train_state.step)
+            if cfg.wandb_config.enabled:
+                wandb.log(metrics, step=train_state.step)
             if bar:
                 bar.update(min(num_act_steps, target_steps - bar.n))
 
@@ -199,7 +201,8 @@ def run_training(training_ctx):
         if should_evaluate_epoch(cfg, epoch):
             metrics = evaluate(training_ctx)
             if dist_ctx.is_master and metrics:
-                wandb.log(metrics, step=train_state.step)
+                if cfg.wandb_config.enabled:
+                    wandb.log(metrics, step=train_state.step)
                 if cfg.checkpoint.save.train:
                     training_ctx.checkpoint_manager.save()
 
