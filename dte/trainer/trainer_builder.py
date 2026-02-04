@@ -14,7 +14,7 @@ from dte.trainer.ema import EMAHelper
 from dte.act.act_model_factory import ACTModelFactory, ACTModelCompiler
 from dte.act.act_container import ACTContainerManager
 from dte.data.data_module import DataModule
-from config.config_loader import PretrainConfig
+from dte.utils.config_loader import PretrainConfig
 
 
 class TrainerBuilder:
