@@ -6,7 +6,7 @@ import torch
 from torch.utils.data import DataLoader
 from torch.utils.data.distributed import DistributedSampler
 
-from config.config_loader import import_from_path
+from dte.utils.config_loader import import_from_path
 from dte.data.batch import Batch
 from dte.data.batch_stream import BatchStream
 from dte.data.fixed_numpy_dataset import FixedNumpyDataset
