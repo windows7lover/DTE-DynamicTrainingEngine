@@ -7,7 +7,7 @@ from typing import Optional
 import wandb
 from torch import nn
 
-from config.config_loader import PretrainConfig, WandbConfig
+from dte.utils.config_loader import PretrainConfig, WandbConfig
 
 
 log = logging.getLogger(__name__)
