@@ -1,6 +1,6 @@
 mode: fixed
 
-dataset_metadata_cls_path: "user_module.metadata.sudoku_metadata.SudokuMetadata"
+dataset_metadata_cls_path: "metadata.sudoku_metadata.SudokuMetadata"
 
 dataset_metadata:
   sudoku_size: 9

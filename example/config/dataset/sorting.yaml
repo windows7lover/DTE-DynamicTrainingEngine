@@ -1,7 +1,7 @@
 
 mode: online
 
-dataset_metadata_cls_path: "user_module.metadata.numeric_seq_metadata.NumericSeqMetadata"
+dataset_metadata_cls_path: "metadata.numeric_seq_metadata.NumericSeqMetadata"
 
 dataset_metadata:
   seq_len: 100
